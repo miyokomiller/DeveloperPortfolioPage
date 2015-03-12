@@ -1,28 +1,58 @@
 ﻿@{
     ViewBag.Title = "About";
-    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
-   
-<script src="~/Scripts/pdfobject.js"></script>
-<br /><br />
-    <h1><u>Resume</u></h1>
-    <h3> Take a look at my resume! If you would like references please contact me!</h3>
-    <div class="container" style="height: 90%" >
+<link href="~/Content/landing-page.css" rel="stylesheet" />
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            @Html.ActionLink("Welcome", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About Maria", "About", "Home")</li>
+                    <li>@Html.ActionLink("Work by Maria", "Works", "Home")</li>
+                    <li>@Html.ActionLink("Contact Maria", "Contact", "Home")</li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <script src="~/Scripts/pdfobject.js"></script>
+    <br /><br />
+    <h1 id="resumeheading">Resume</h1>
+    <h3 id="resumeheading"> Take a look at my resume! If you would like references please contact me!</h3>
+    <div class="container" style="height: 100%">
         <div id="pdf" style=" height:90%">It appears you don't have Adobe Reader or PDF support in this web browser. <a href="/Content/MariaMillerResume.pdf">Click here to download the PDF</a></div>
-        
+
     </div>
 
     <script type="text/javascript">
 
-    window.onload = function () {
+        window.onload = function () {
 
-        var success = new PDFObject({ url: "/Content/MariaMillerResume.pdf" }).embed("pdf");
+            var success = new PDFObject({ url: "/Content/MariaMillerResume.pdf" }).embed("pdf");
 
-    };
+        };
 
     </script>
+</body>
 
 
 
-    
-    
+

@@ -22,8 +22,13 @@ namespace DEVSITE.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "If you have any questions, I have all the answers.";
 
+            return View();
+        }
+        public ActionResult Works()
+        {
+            ViewBag.Message = "Your Works page.";
             return View();
         }
     }
