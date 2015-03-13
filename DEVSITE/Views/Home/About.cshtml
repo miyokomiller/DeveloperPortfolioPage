@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "About";
+    
+}
+   
+<script src="~/Scripts/pdfobject.js"></script>
+<br /><br />
+    <h1><u>Resume</u></h1>
+    <h3> Take a look at my resume! If you would like references please contact me!</h3>
+    <div class="container" style="height: 90%" >
+        <div id="pdf" style=" height:90%">It appears you don't have Adobe Reader or PDF support in this web browser. <a href="/Content/MariaMillerResume.pdf">Click here to download the PDF</a></div>
+        
+    </div>
+
+    <script type="text/javascript">
+
+    window.onload = function () {
+
+        var success = new PDFObject({ url: "/Content/MariaMillerResume.pdf" }).embed("pdf");
+
+    };
+
+    </script>
+
+
+
+    
+    
